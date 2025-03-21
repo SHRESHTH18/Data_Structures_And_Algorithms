@@ -19,7 +19,7 @@ public class p2_majority_element {
     public static ArrayList<Integer> majorityElement(int[] nums){
         ArrayList<Integer> list = new ArrayList<>();
         for(int i=0;i<nums.length;i++){
-
+            
         }
         return list;
     }
