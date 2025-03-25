@@ -5,7 +5,7 @@ import java.util.Scanner;
 //approach
 /*
 find the index from where the array is truly decreasing . Set it to start
-now from start till end of array search for the least element that is greater than element at nums[start-1]
+now from start till end of sub array search for the least element that is greater than element at nums[start-1]
 now we swap this element with element nums[start]-1
 and then sort the sub array from start till nums.length-1
  */
