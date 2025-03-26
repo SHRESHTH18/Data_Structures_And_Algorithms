@@ -29,7 +29,7 @@ If the sum is equal to the target, we will simply insert the triplet i.e. arr[i]
 Finally, we will have a list of unique triplets.
      */
     public static ArrayList<ArrayList<Integer>> threeSum(int [] nums){
-        List<List<Integer>> result = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         Arrays.sort(nums); // Step 1: Sort the array to handle duplicates easily
 
         int n = nums.length;
@@ -42,8 +42,11 @@ Finally, we will have a list of unique triplets.
                 int sum = nums[i] + nums[left] + nums[right];
 
                 if (sum == 0) {
-                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
-
+                    ArrayList<Integer> temp = new ArrayList<>();
+                    temp.add(nums[i]);
+                    temp.add(nums[left]);
+                    temp.add(nums[right]);
+                    result.add(temp);
                     // Skip duplicate elements for 'left' and 'right'
                     while (left < right && nums[left] == nums[left + 1]) left++;
                     while (left < right && nums[right] == nums[right - 1]) right--;
