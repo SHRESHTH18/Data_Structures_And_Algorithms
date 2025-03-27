@@ -23,8 +23,32 @@ public class p4_4sum {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         HashMap<Long, Integer> map = new HashMap<>();
         int n = nums.length;
-
-        
+        Arrays.sort(nums);
+        for(int i=0;i<n-2;i++){
+            for(int j=n-1;j>2;j--){
+                int a=i+1;
+                int b=j-1;
+                while(a<b){
+                    long sum=(long)nums[i]+ (long)nums[j]+ (long)nums[a]+ (long)nums[b];
+                    if(sum<(long)target)
+                        a++;
+                    else if(sum>(long)target)
+                        b--;
+                    else {
+                        ArrayList<Integer> temp = new ArrayList<>();
+                        temp.add(nums[i]);
+                        temp.add(nums[a]);
+                        temp.add(nums[b]);
+                        temp.add(nums[j]);
+                        if(!list.contains(temp)){
+                            list.add(temp);
+                        }
+                        a++;
+                        b--;
+                    }
+                }
+            }
+        }
         return list;
     }
 
