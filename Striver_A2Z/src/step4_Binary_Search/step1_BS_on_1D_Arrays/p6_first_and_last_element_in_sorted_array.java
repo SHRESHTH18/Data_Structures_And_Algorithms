@@ -15,8 +15,8 @@ public class p6_first_and_last_element_in_sorted_array {
         }
         System.out.println("enter target");
         int target=in.nextInt();
-        int[] floor_and_ceil = searchRange(arr,target);
-        System.out.println(Arrays.toString(floor_and_ceil));
+        int[] range = searchRange(arr,target);
+        System.out.println(Arrays.toString(range));
     }
 
     //binary search
