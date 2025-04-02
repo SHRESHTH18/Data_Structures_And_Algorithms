@@ -41,7 +41,7 @@ public class p13_find_peak_element {
 // Dummy return statement
         return -1;
     }
-    }
+
     //linear - O(n)
 //    public static int findPeakElement(int[] nums){
 //        int n=nums.length;
