@@ -2,11 +2,11 @@ package step4_Binary_Search.step2_BS_on_Answers;
 
 import java.util.Scanner;
 
-public class p5_Find_Smallest_Divisor_With_Given_Threshold {
+public class p8_Aggressive_cows {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("enter threshold");
-        int thresh = in.nextInt();
+        System.out.println("enter number of cows");
+        int k = in.nextInt();
         System.out.println("enter n");
         int n= in .nextInt();
         System.out.println("enter array");
@@ -14,33 +14,35 @@ public class p5_Find_Smallest_Divisor_With_Given_Threshold {
         for(int i=0;i<n;i++){
             nums[i]=in.nextInt();
         }
-        int min=smallestDivisor(nums,thresh);
+        int min=aggressive_cows(nums,k);
         System.out.println(min);
     }
-    public static int smallestDivisor(int[] nums, int threshold){
+    public static int aggressive_cows(int[] nums,int k){
         int low=1;
-        int high=max(nums);
-        int ans=-1;
+        int high = max(nums) - min(nums);
         while(low<=high){
             int mid=low+(high-low)/2;
-            int sum=sum(nums,mid);
-            if(sum<=threshold){
-                ans=mid;
-                high=mid-1;
-            }
-            else{
+            if(canWePlaceCow(nums,mid,k)){
                 low=mid+1;
             }
+            else{
+                high=mid-1;
+            }
         }
-        return ans;
+        return high;
     }
-    public static int sum(int[] arr, int divisor){
-        int n= arr.length;
-        int sum=0;
-        for(int i=0;i<n;i++){
-            sum+=(int)Math.ceil((double)arr[i]/(double)divisor);
+    public static boolean canWePlaceCow(int[] nums,int dist , int k){
+        int n= nums.length;
+        int count=1;
+        int last = nums[0];
+        for(int i=1;i<n;i++){
+            if(nums[i]-last>=dist){
+                count++;
+                last=nums[i];
+            }
         }
-        return sum;
+        if(count>=k) return true;
+        return false;
     }
     public static int min(int [] arr){
         int n=arr.length;

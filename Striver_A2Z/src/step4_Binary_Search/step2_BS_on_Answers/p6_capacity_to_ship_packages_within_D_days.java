@@ -7,7 +7,7 @@ public class p6_capacity_to_ship_packages_within_D_days {
         int days = in.nextInt();
         System.out.println("enter n");
         int n= in .nextInt();
-        System.out.println("enter piles array");
+        System.out.println("enter array");
         int[] nums = new int[n];
         for(int i=0;i<n;i++){
             nums[i]=in.nextInt();
