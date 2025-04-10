@@ -13,32 +13,57 @@ public class p7_valid_anagram {
         System.out.println(ans);
     }
     public static boolean isAnagram(String s, String t){
-        if (s.length() != t.length()) return false;
-
-        // HashMap<Character, Integer> map = new HashMap<>();
-        // HashMap<Character, Integer> map1 = new HashMap<>();
-
-        // for (int i = 0; i < s.length(); i++) {
-        //     map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-        //     map1.put(t.charAt(i), map1.getOrDefault(t.charAt(i), 0) + 1);
-        // }
-
-        // return map.equals(map1);
-        char[] chars = t.toCharArray();
-        Arrays.sort(chars);
-        String key = new String(chars);
-
-        char[] chars1 = s.toCharArray();
-        Arrays.sort(chars1);
-        String key2 = new String(chars1);
-
-        if(key.equals(key2)){
+        if (s.equals(t)) {
             return true;
         }
-        else{
+
+        if (s.length() != t.length()) {
             return false;
         }
+
+        int charCount[] = new int[26];
+        for (char c : s.toCharArray()) {
+            charCount[c-'a']++;
+        }
+
+        for (char c : t.toCharArray()) {
+            charCount[c-'a']--;
+            if (charCount[c-'a'] < 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
+
+//    public static boolean isAnagram(String s, String t){
+//        if (s.length() != t.length()) return false;
+//
+//        // HashMap<Character, Integer> map = new HashMap<>();
+//        // HashMap<Character, Integer> map1 = new HashMap<>();
+//
+//        // for (int i = 0; i < s.length(); i++) {
+//        //     map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+//        //     map1.put(t.charAt(i), map1.getOrDefault(t.charAt(i), 0) + 1);
+//        // }
+//
+//        // return map.equals(map1);
+//        char[] chars = t.toCharArray();
+//        Arrays.sort(chars);
+//        String key = new String(chars);
+//
+//        char[] chars1 = s.toCharArray();
+//        Arrays.sort(chars1);
+//        String key2 = new String(chars1);
+//
+//        if(key.equals(key2)){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    }
+
 //    public static boolean isAnagram(String s, String t){
 //        if (s.equals(t)) {
 //            return true;
