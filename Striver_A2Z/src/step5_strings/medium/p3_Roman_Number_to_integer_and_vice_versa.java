@@ -8,7 +8,7 @@ public class p3_Roman_Number_to_integer_and_vice_versa {
         Scanner in = new Scanner(System.in);
         System.out.println("enter string");
         String s= in.nextLine();
-        int ans=romanToint(s);
+        int ans=romanToInt(s);
         System.out.println(ans);
     }
     public static int romanToInt(String s){
