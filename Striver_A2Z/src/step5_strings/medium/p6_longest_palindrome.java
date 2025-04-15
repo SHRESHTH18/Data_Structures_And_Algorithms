@@ -12,7 +12,7 @@ public class p6_longest_palindrome {
     }
 
     public static String longestPalindrome(String s){
-
+        return "";
     }
 
     //brute check for every possible substring , is it longest palindrome ?
