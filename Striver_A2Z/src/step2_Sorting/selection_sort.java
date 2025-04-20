@@ -15,8 +15,6 @@ public class selection_sort {
         }
 
         SelectionSort(arr);
-
-
     }
     static void SelectionSort(int[] arr){
         for(int i=0;i<arr.length;i++){

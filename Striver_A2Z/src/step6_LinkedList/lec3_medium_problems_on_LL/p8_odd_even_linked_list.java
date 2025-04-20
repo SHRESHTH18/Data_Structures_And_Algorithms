@@ -16,7 +16,7 @@ public class p8_odd_even_linked_list {
         odd.next=evenHead;
         return head;
     }
-    
+
 //    public ListNode oddEvenList(ListNode head) {
 //        if(head==null || head.next==null || head.next.next==null) return head;
 //        ListNode temp=head;
