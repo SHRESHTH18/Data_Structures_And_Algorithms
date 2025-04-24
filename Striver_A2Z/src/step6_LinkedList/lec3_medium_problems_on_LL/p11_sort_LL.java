@@ -1,6 +1,6 @@
 package step6_LinkedList.lec3_medium_problems_on_LL;
 
-public class p10_sort_LL {
+public class p11_sort_LL {
     //merge sort
     public ListNode sortList(ListNode head) {
         if(head==null || head.next==null){

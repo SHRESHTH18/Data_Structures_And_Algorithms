@@ -1,6 +1,6 @@
 package step6_LinkedList.lec3_medium_problems_on_LL;
 
-public class p11_sort_LL_of_012 {
+public class p12_sort_LL_of_012 {
     public ListNode sortList(ListNode head) {
         ListNode temp=head;
         ListNode head0=new ListNode(-1);

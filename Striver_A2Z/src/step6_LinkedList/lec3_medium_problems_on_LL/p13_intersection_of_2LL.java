@@ -1,6 +1,6 @@
 package step6_LinkedList.lec3_medium_problems_on_LL;
-import java.util.HashSet;
-public class p12_intersection_of_2LL {
+
+public class p13_intersection_of_2LL {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode t1=headA;
