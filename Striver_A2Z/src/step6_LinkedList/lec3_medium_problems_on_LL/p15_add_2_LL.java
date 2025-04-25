@@ -4,18 +4,18 @@ public class p15_add_2_LL {
 
     //without equal lengths
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode dummy = new ListNode();
+        ListNode dummy = new ListNode(0);
         ListNode temp = dummy;
         int carry = 0;
         while( l1 != null || l2 != null || carry == 1) {
             int sum = 0;
             if(l1 != null) {
-                sum += l1.val;
+                sum += l1.data;
                 l1 = l1.next;
             }
 
             if(l2 != null) {
-                sum += l2.val;
+                sum += l2.data;
                 l2 = l2.next;
             }
 
@@ -59,9 +59,9 @@ public class p15_add_2_LL {
 //        int carry = 0;
 //        ListNode prev = null;
 //        while (t1 != null) {
-//            int sum = t1.val + t2.val + carry;
+//            int sum = t1.data + t2.data + carry;
 //            carry = sum / 10;
-//            t1.val = sum % 10;
+//            t1.data = sum % 10;
 //
 //            prev = t1;
 //            t1 = t1.next;
