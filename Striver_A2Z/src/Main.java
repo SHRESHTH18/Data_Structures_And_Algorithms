@@ -13,6 +13,7 @@ public class Main {
             arr[i]=in.nextInt();
         }
         System.out.println(numRabbits(arr));
+        ArrayList<Integer> list = new ArrayList<>();
     }
     public static int numRabbits(int[] answers) {
         HashMap<Integer,Integer> map = new HashMap<>();
