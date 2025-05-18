@@ -8,25 +8,26 @@ public class Main {
         System.out.println("enter length");
         int n= in.nextInt();
         System.out.println("enter array");
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=in.nextInt();
-        }
-        System.out.println(numRabbits(arr));
+//        int[] arr = new int[n];
+//        for(int i=0;i<n;i++){
+//            arr[i]=in.nextInt();
+//        }
+        gfSeries(n);
         ArrayList<Integer> list = new ArrayList<>();
     }
-    public static int numRabbits(int[] answers) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        int n=answers.length;
-        for(int i=0;i<n;i++){
-            map.put(answers[i],map.getOrDefault(answers[i],0)+1);
+    static void gfSeries(int N) {
+        int[] arr = new int[N];
+        if (N >= 1) {
+            arr[0] = 0;
+            System.out.print(arr[0] + " ");
         }
-        int count=0;
-        for(int key:map.keySet()){
-            int mul=(int)Math.ceil((double)map.get(key)/(double)(key+1));
-
-            count = count+ (1 + key)*mul;
+        if (N >= 2) {
+            arr[1] = 1;
+            System.out.print(arr[1] + " ");
         }
-        return count;
+        for (int i = 2; i < N; i++) {
+            arr[i] = (int)(Math.pow(arr[i - 2], 2)) - arr[i - 1];
+            System.out.print(arr[i] + " ");
+        }
     }
 }
