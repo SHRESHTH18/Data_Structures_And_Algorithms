@@ -8,12 +8,19 @@ public class Main {
         System.out.println("enter length");
         int n= in.nextInt();
         System.out.println("enter array");
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.remove(1);
+
 //        int[] arr = new int[n];
 //        for(int i=0;i<n;i++){
 //            arr[i]=in.nextInt();
 //        }
         gfSeries(n);
         ArrayList<Integer> list = new ArrayList<>();
+        String s = "shrehs";
+        System.out.println(s.substring(0,2));
+
     }
     static void gfSeries(int N) {
         int[] arr = new int[N];
@@ -29,5 +36,16 @@ public class Main {
             arr[i] = (int)(Math.pow(arr[i - 2], 2)) - arr[i - 1];
             System.out.print(arr[i] + " ");
         }
+    }
+    public int countSetBits(int n){
+        int count=0;
+        while(n>1){
+            if(n%2==1){
+                count++;
+            }
+            n=n/2;
+        }
+        count++;
+        return count;
     }
 }
