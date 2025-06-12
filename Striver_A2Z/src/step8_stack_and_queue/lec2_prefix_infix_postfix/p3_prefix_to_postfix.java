@@ -1,4 +1,4 @@
-package step8_stack_and_queue.lec2_perfix_infix_postfix;
+package step8_stack_and_queue.lec2_prefix_infix_postfix;
 
 import java.util.Stack;
 

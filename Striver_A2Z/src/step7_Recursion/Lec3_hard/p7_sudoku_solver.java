@@ -1,6 +1,7 @@
 package step7_Recursion.Lec3_hard;
-
+import java.util.Scanner;
 public class p7_sudoku_solver {
+
     public void solveSudoku(char[][] board) {
         helper(board);
     }
