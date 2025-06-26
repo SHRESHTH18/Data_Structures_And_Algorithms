@@ -1,5 +1,7 @@
 package step6_LinkedList.lec1_learn_single_LL;
 
+import java.util.HashMap;
+
 public class Node {
     int data;
     Node next;
@@ -12,5 +14,7 @@ public class Node {
         this.data = data;
         this.next = null;
     }
+    HashMap<Integer,Integer> map = new HashMap<>();
+
 }
 
