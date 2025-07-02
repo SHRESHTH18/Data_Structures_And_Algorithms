@@ -11,7 +11,6 @@ public class Main {
         HashSet<Integer> set = new HashSet<>();
         set.add(1);
         set.remove(1);
-
 //        int[] arr = new int[n];
 //        for(int i=0;i<n;i++){
 //            arr[i]=in.nextInt();

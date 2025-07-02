@@ -4,10 +4,14 @@ public class p6_dfs {
 
     public ArrayList<Integer> dfs(ArrayList<ArrayList<Integer>> adj) {
         // Code here
-        Stack<Integer> st = new Stack<>();
         boolean[] visited = new boolean[adj.size()];
         ArrayList<Integer> ans = new ArrayList<>();
-        dfs(0,adj,visited,ans);
+        for(int i=0;i<adj.size();i++){
+            if(!visited[i]){
+                dfs(i,adj,visited,ans);
+            }
+        }
+
         return ans;
     }
     public void dfs(int node, ArrayList<ArrayList<Integer>> adj ,boolean[] visited , ArrayList<Integer> ans){
