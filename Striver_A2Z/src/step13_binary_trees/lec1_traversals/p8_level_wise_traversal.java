@@ -1,13 +1,29 @@
 package step13_binary_trees.lec1_traversals;
 import java.util.*;
 public class p8_level_wise_traversal {
-    class TreeNode{
-        int val;
-        TreeNode left,right;
-        public TreeNode(int val){
-            this.val=val;
+
+    public List<List<Integer>> levelOrderApproach2(TreeNode root) {
+        List<List<Integer>> ans=new ArrayList();
+        if(root==null) return ans;
+        Queue<TreeNode> q=new LinkedList<>();
+        q.offer(root);
+        while(!q.isEmpty()){
+            int n=q.size();
+            List<Integer> res=new ArrayList<>();
+            for(int i=0;i<n;i++){
+                TreeNode curr=q.poll();
+                res.add(curr.val);
+                if(curr.left!=null) q.offer(curr.left);
+                if(curr.right!=null) q.offer(curr.right);
+
+            }
+            ans.add(res);
         }
+        return ans;
+
     }
+
+
     class Pair{
         TreeNode node;
         int level;
